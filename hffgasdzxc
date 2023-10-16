@@ -1,7 +1,7 @@
 repeat wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
 wait(5)
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/nano3392374/mbblasdqw/main/zxczc'))()")
+queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/nano3392374/mbblasdqw/main/hffgasdzxc'))()")
 
 if game.PlaceId == 11987539001 then
 repeat wait() until game.Players.LocalPlayer.Character
