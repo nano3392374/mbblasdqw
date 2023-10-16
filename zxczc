@@ -1,8 +1,359 @@
+
 repeat wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
 wait(5)
-print("TEST")
-print("lol")
-print("lol")
-print("lol")
-print("lol")
-print("lol")
+local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/nano3392374/mbblasdqw/main/zxczc'))()")
+
+if game.PlaceId == 11987539001 then
+repeat wait() until game.Players.LocalPlayer.Character
+repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.GameGui.Health.nameLabel
+wait(2)
+game:GetService("TeleportService"):Teleport(12632324801, game.Players.LocalPlayer)
+end
+if game.PlaceId == 12632324801 then
+repeat wait() until game.Players.LocalPlayer.Character.Humanoid
+game.Players.LocalPlayer.DevCameraOcclusionMode = 'Invisicam'
+game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 9e9
+local WatchoutPlayer = {"vXiesnW","jojotheultimate","LokeKvasir","UNDEADINDUSTRY","HorizonPoint","xpopSin","Aozaki_Aoko","Enderro","AnakinUnico","Potatar","devin2000010","SavonTheGreat","magoogamer24","midsomah","Shadow_Claw600","ShadowYoite","Gudaou","Hawkixs","Flames98765","DustynYTB","VentaIity","Obstrucion","Bell_Cranel25","Not_S3V","ElderlyRobloxPlayer","Skellvex","ChippyThePenguin","Lady_Laura66","Inf1n1tylt","leirach","Divinity_XVI","Nexus_IV","Firefly_Gardener","Felipefe_hd","GamerJorusHoth","nimbus64","chsewo_n","jengilis","Zuyashi","BloodBorn_Loonatic","badenglishj","kens1ies","AOKO_A0ZAKI"}
+local event = game:GetService("ReplicatedStorage").TeleportEvent
+local getupvalue = getupvalue or debug.getupvalue;
+local httpService = game:GetService("HttpService");
+local players = game:GetService("Players");
+local replicatedStorage = game:GetService("ReplicatedStorage");
+local tweenService = game:GetService("TweenService");
+local starterGui = game:GetService("StarterGui");
+local animtracks = game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()
+local client = players.LocalPlayer;
+local vu = game:GetService("VirtualUser")
+	local _=Instance.new("Part",workspace) 
+	_.Size=Vector3.new(100,1,100)
+	_.CFrame=client.Character.HumanoidRootPart.CFrame+Vector3.new(0,-55,0) 
+	_.Transparency=0.95
+	_.Anchored=true
+	_.Name="LOWL" 
+local runService = game:GetService("RunService");
+local heartbeat = runService.Heartbeat;
+local TeleportSpeed = 250;
+local NextFrame = runService.Heartbeat;
+local PLR = game:GetService("Players") 
+local pp = {}
+local random = math.random(1, 10000000)
+local Players = game:GetService'Players'
+local LocalPlayer = Players.LocalPlayer
+local OtherPlayers = Players:GetPlayers()
+table.remove(OtherPlayers, table.find(OtherPlayers, LocalPlayer))
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/LegoHacks/Utilities/main/UI.lua"))();
+
+-- Main Script
+safestop = false
+
+local mobs = {
+    [12632324801] = {-- floor 17
+        "Axolotl";
+        "Chubby Dragon";
+        "Slim Dragon";
+        "Nebulous Gum";
+        "Candy Crab";
+        "Candy Soldier";
+    };
+};
+
+local bosses = {
+    [12632324801] = {-- floor 17
+        "Captain Sweet the Forever Child";
+    };
+};
+
+
+repeat wait() until client.Character
+repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.GameGui.Health.nameLabel
+
+
+
+game:GetService("Players").PlayerAdded:Connect(function(clown)
+safestop = true
+for i, v in next, game.Players:GetPlayers() do
+if v ~= game.Players.LocalPlayer then
+game:GetService("StarterGui"):SetCore("PromptBlockPlayer", v)
+writefile ("oof"..random..".txt",v.Name)
+safestop = true
+repeat wait() until game:GetService("CoreGui").RobloxGui.PromptDialog.Visible == true
+wait(0.5)
+local vim = game:GetService'VirtualInputManager'
+local x = game:GetService("CoreGui").RobloxGui.PromptDialog.ContainerFrame.ConfirmButton
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+wait(2)
+game:GetService("TeleportService"):Teleport(11987539001, LocalPlayer)
+return v
+end
+end
+end)
+
+function updateX() 
+safestop = true
+for i, v in pairs(OtherPlayers) do
+game:GetService("StarterGui"):SetCore("PromptBlockPlayer", v)
+writefile ("oof"..random..".txt",v.Name)
+safestop = true
+repeat wait() until game:GetService("CoreGui").RobloxGui.PromptDialog.Visible == true
+wait(0.5)
+local vim = game:GetService'VirtualInputManager'
+local x = game:GetService("CoreGui").RobloxGui.PromptDialog.ContainerFrame.ConfirmButton
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+wait(2)
+game:GetService("TeleportService"):Teleport(11987539001, LocalPlayer)
+return v
+end
+end
+
+
+for i, v in pairs(OtherPlayers) do
+updateX()
+end
+PLR.PlayerAdded:connect(updateX)
+wait(30)
+for i, v in pairs(OtherPlayers) do
+updateX()
+end
+wait(30)
+for i, v in pairs(OtherPlayers) do
+updateX()
+end
+BossRoom = Vector3.new(3035.77, -815.55, -2039.54)
+event:FireServer(BossRoom)
+for i, v in pairs(OtherPlayers) do
+updateX()
+end
+wait(30)
+repeat
+local vim = game:GetService'VirtualInputManager'
+local x = game:GetService("Players").LocalPlayer.PlayerGui.GameGui.ConsolePC.EquipButton
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+task.wait() until library.flags.autofarming == false or game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0 or  game:GetService("Players").LocalPlayer.PlayerGui.GameGui.ConsolePC.EquipButton.ImageColor3 == Color3.fromRGB(96, 192, 255)
+
+wait(10)
+
+function update()
+pcall(function()
+for _,v in pairs(game.Players.LocalPlayer.Character.Sword:GetDescendants()) do
+if v:IsA("BasePart") then
+v.Size = Vector3.new(25,25,25)
+v.Transparency = 1
+end
+end
+for _,v in pairs(game.Players.LocalPlayer.Character.Sword2:GetDescendants()) do
+if v:IsA("BasePart") then
+v.Size = Vector3.new(25,25,25)
+v.Transparency = 1
+end
+end
+end)
+end
+
+
+local function getClosestMob()
+    local distance, mob = math.huge;
+    for i, v in next, workspace.Mobs:GetChildren() do
+        if (v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 ) then
+            if (library.flags.bosses == false) then
+                for a, b in next, bosses[game.PlaceId] do
+                    if (b == v:FindFirstChild("Config").Entity.Value) then
+                        return v;
+                    end;
+                end;
+            end;
+
+            local distanceFromChar = client:DistanceFromCharacter(v.HumanoidRootPart.Position);
+            if (distanceFromChar < distance) then
+               if (v.Config.Entity.Value == "Nebulous Gum" or v.Config.Entity.Value == "Candy Soldier") then
+                    distance = distanceFromChar;
+                    mob = v;
+                end;
+            end;
+        end;
+    end;
+
+    return mob;
+end;
+
+
+
+
+local function ImprovedTeleport(Target)
+    if (typeof(Target) == "Instance" and Target:IsA("BasePart")) then Target = Target.Position; end;
+    if (typeof(Target) == "CFrame") then Target = Target.p end;
+
+    local HRP = (client.Character and client.Character:FindFirstChild("HumanoidRootPart"));
+    if (not HRP) then return; end;
+
+    local StartingPosition = HRP.Position;
+    local PositionDelta = (Target - StartingPosition);--Calculating the difference between the start and end positions.
+    local StartTime = tick();
+    local TotalDuration = (StartingPosition - Target).magnitude / TeleportSpeed;
+pcall(function()
+    repeat NextFrame:Wait();
+        local Delta = tick() - StartTime;
+        local Progress = math.min(Delta / TotalDuration, 1);--Getting the percentage of completion of the teleport (between 0-1, not 0-100)
+        local MappedPosition = StartingPosition + (PositionDelta * Progress);
+        HRP.Velocity = Vector3.new();
+        HRP.CFrame = CFrame.new(MappedPosition);
+local mobA = getClosestMob();
+local vu = game:GetService("VirtualUser")
+    until mobA  or (HRP.Position - Target).magnitude <= TeleportSpeed / 2;
+    end)
+    HRP.Anchored = false;
+    HRP.CFrame = CFrame.new(Target);
+  
+end;
+
+
+spawn(function()
+repeat wait() until game:IsLoaded()
+ pcall(function()
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+    end)
+end)
+end)
+
+game:GetService('RunService').Stepped:connect(function()
+    if (library.flags.autofarming == false and safestop == false) then
+    pcall(function()
+        _.CFrame = client.Character.HumanoidRootPart.CFrame+Vector3.new(0,-3.5,0)
+        end)
+    end
+
+end)
+
+local autoFarmTab = library:CreateWindow("Auto Farm");
+
+autoFarmTab:AddToggle({
+    text = "STOP";
+    flag = "autofarming"
+});
+
+
+autoFarmTab:AddToggle({
+    text = "Prioritize Bosses";
+    flag = "bosses"
+});
+
+
+autoFarmTab:AddSlider({
+    text = "Attack Range";
+    flag = "attack_range";
+    min = 20;
+    max = 25;
+});
+
+
+
+heartbeat:Connect(function()
+    if (client.Character and library.flags.autofarming == false or library.flags.bosses == false) then
+        for i, v in next, client.Character:GetChildren() do
+            if (v:IsA("BasePart")) then
+                v.CanCollide = false;
+            end;
+        end;
+    end;
+end);
+
+safed = true
+nofall = true
+bigweapon = false
+waitingtime = 2.5
+fixpos = false
+heal = false
+heartbeat:Connect(function()
+
+if (game:GetService("Players").LocalPlayer.Character.Humanoid.Health / game:GetService("Players").LocalPlayer.Character.Humanoid.MaxHealth * 100) <= 50 and heal == false and library.flags.autofarming == false then
+heal = true
+local v1 = "Health Potion III"
+local event = game:GetService("ReplicatedStorage").UseConsumable
+event:InvokeServer(v1)
+heal = false
+end
+        if  library.flags.autofarming == false then
+        else
+        safed = true
+        nofall = true
+        bigweapon = false
+        end
+      
+end);
+
+
+heartbeat:Connect(function()
+          for i, v in next, game.Players:GetChildren() do
+          if table.find(WatchoutPlayer,v.Name) then
+           game:GetService("Players").LocalPlayer:Kick("RUN MOD/ADMIN IN THE SERVER.")
+           game:Shutdown()
+          end
+          end
+        
+end);
+
+update()
+game:GetService("Workspace").Map:Destroy()
+
+spawn(function()
+    while true do
+    pcall(function()
+if (library.flags.autofarming == false and safestop == false)  then
+local mob = getClosestMob();
+if ( safed == true and safestop == false and mob and mob:FindFirstChild("HumanoidRootPart") and mob.HumanoidRootPart and (client.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude <= library.flags.attack_range+5) then
+safed = false
+fixpos = true
+wait(waitingtime)
+ for i, v in next, game.Players:GetPlayers() do
+              if v ~= game.Players.LocalPlayer then
+updateX()
+end
+end
+fixpos = false
+repeat
+ for i, v in next, game.Players:GetPlayers() do
+              if v ~= game.Players.LocalPlayer then
+updateX()
+end
+end
+if (client.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude <= library.flags.attack_range+5 and safestop == false then
+vu:ClickButton1(Vector2.new(500,0), game.Workspace.CurrentCamera.CFrame)
+ImprovedTeleport(Vector3.new(mob.HumanoidRootPart.Position.X,mob.HumanoidRootPart.Position.Y + library.flags.attack_range , mob.HumanoidRootPart.Position.Z))
+else
+nofall = false
+end
+task.wait()
+until not mob or safestop == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0 or nofall == false or safed == true  or mob.Humanoid.Health <= 0 or library.flags.autofarming;
+nofall = false
+repeat
+local vim = game:GetService'VirtualInputManager'
+local x = game:GetService("Players").LocalPlayer.PlayerGui.GameGui.ConsolePC.EquipButton
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+task.wait() until library.flags.autofarming or safestop == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0 or game:GetService("Players").LocalPlayer.PlayerGui.GameGui.ConsolePC.EquipButton.ImageColor3 == Color3.fromRGB(255, 255, 255)
+repeat
+local vim = game:GetService'VirtualInputManager'
+local x = game:GetService("Players").LocalPlayer.PlayerGui.GameGui.ConsolePC.EquipButton
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,true,x,1)
+vim:SendMouseButtonEvent(x.AbsolutePosition.X+x.AbsoluteSize.X/2,x.AbsolutePosition.Y+50,0,false,x,1)
+task.wait() until library.flags.autofarming or safestop == true or game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0 or  game:GetService("Players").LocalPlayer.PlayerGui.GameGui.ConsolePC.EquipButton.ImageColor3 == Color3.fromRGB(96, 192, 255)
+task.wait(0.5)
+safed = true
+nofall = true
+end
+if safed == true and safestop == false and mob and mob:FindFirstChild("HumanoidRootPart") and mob.HumanoidRootPart and (client.Character.HumanoidRootPart.Position - mob.HumanoidRootPart.Position).Magnitude > library.flags.attack_range+5 then
+ImprovedTeleport(Vector3.new(mob.HumanoidRootPart.Position.X,mob.HumanoidRootPart.Position.Y + library.flags.attack_range,mob.HumanoidRootPart.Position.Z))
+end;
+end;
+            end)
+        task.wait();
+    end;
+end);
+
+library:Init();
+end
