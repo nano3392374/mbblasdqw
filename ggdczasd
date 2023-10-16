@@ -1,0 +1,20 @@
+repeat wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+wait(5)
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+if State == Enum.TeleportState.Started then
+fluxus.queue_on_teleport("script to execute after game teleport")
+    end
+end)
+
+if game.PlaceId == 11987539001 then
+repeat wait() until game.Players.LocalPlayer.Character
+repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.GameGui.Health.nameLabel
+wait(2)
+game:GetService("TeleportService"):Teleport(12632324801, game.Players.LocalPlayer)
+end
+if game.PlaceId == 12632324801 then
+repeat wait() until game.Players.LocalPlayer.Character
+repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.GameGui.Health.nameLabel
+wait(2)
+game:GetService("TeleportService"):Teleport(11987539001, game.Players.LocalPlayer)
+end
